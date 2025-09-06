@@ -13,7 +13,9 @@
 
 // styles.push("rock-n-roll");
 
-// styles[styles.indexOf("blues")] = "classic";
+// // styles[styles.indexOf("blues")] = "classic";
+
+// styles.splice(styles.indexOf("blues"), 1, "classic");
 
 // function logItems(array) {
 //   for (let i = 0; i < array.length; i++) {
@@ -36,9 +38,7 @@
 
 // function checkLogin(array) {
 //   const login = prompt("Login?");
-//   return array.includes(login)
-//     ? alert(`Welcome, ${login}`)
-//     : alert("User not found");
+//   array.includes(login) ? alert(`Welcome, ${login}`) : alert("User not found");
 // }
 
 // checkLogin(logins);
@@ -46,23 +46,36 @@
 // -------------------------------------------------------------------------------------------------------------------------------
 
 // 3
-// Напишіть функцію caclculateAverage(),
+// Напишіть функцію calculateAverage(),
 // яка приймає довільну кількість
 // аргументів і повертає їхнє середнє значення.
 // Додайте перевірку, що аргументи - це числа.
 
-// function caclculateAverage(...args) {
+// function calculateAverage() {
+//   // console.log(arguments);
 //   let sum = 0;
-//   for (const arg of args) {
+//   for (const arg of arguments) {
 //     if (typeof arg === "number") {
 //       sum += arg;
 //     }
 //   }
-//   console.log(args);
-
-//   return Math.round(sum / args.length);
+//   return Math.round(sum / arguments.length);
 // }
-// console.log(caclculateAverage(1, 2, true, 3, 254, "hello", 5, 6, 7, 8, 9));
+
+// // calculateAverage(2, true, 3, 254, "hello", 5, 6, 7);
+
+// // function calculateAverage(...args) {
+// //   let sum = 0;
+// //   for (const arg of args) {
+// //     if (typeof arg === "number") {
+// //       sum += arg;
+// //     }
+// //   }
+// //   console.log(args);
+
+// //   return Math.round(sum / args.length);
+// // }
+// console.log(calculateAverage(1, 2, true, 3, 254, "hello", 5, 6, 7, 8, 9));
 
 // -------------------------------------------------------------------------------------------------------------------------------
 
@@ -77,14 +90,14 @@
 // третє - з четвертим і так до кінця.
 // В результаті функція має повертати масив [33, 45, 39, 17, 25, 27, 29].
 
-// function sumNeighbors(arr) {
-//   const newArr = [];
-//   for (let i = 0; i < arr.length - 1; i++) {
-//     newArr.push(arr[i] + arr[i + 1]);
+// function sum(array) {
+//   const newArray = [];
+//   for (let i = 0; i < array.length - 1; i++) {
+//     newArray.push(array[i] + array[i + 1]);
 //   }
-//   return newArr;
+//   return newArray;
 // }
-// console.log(sumNeighbors(someArr));
+// console.log(sum(someArr));
 
 // -------------------------------------------------------------------------------------------------------------------------------
 
@@ -114,9 +127,22 @@
 // пробілами (параметр string), і повертатиме найдовше слово у реченні.
 
 // Скористайтесь цим прикладом виклику функції для перевірки її роботи:
-// console.log(findLongestWord("London is the capital of Great Britain")); // 'capital'
+
+// function findLongestWord(string) {
+//   const wordsArray = string.split(" ");
+//   const wordLength = [];
+//   let longestWord = "";
+//   for (let i = 0; i < wordsArray.length; i++) {
+//     wordLength.push(wordsArray[i].length);
+//     longestWord = wordsArray[wordLength.indexOf(Math.max(...wordLength))];
+//   }
+//   return longestWord;
+// }
+
+// console.log(findLongestWord("London is the capital of Great Britain!")); // 'capital'
 
 // -------------------------------------------------------------------------------------------------------------------------------
+
 // 7
 // Напишіть скрипт, який для об'єкту user, послідовно:
 // 1 - додасть поле mood зі значенням 'happy',
@@ -126,11 +152,21 @@
 // '<ключ>:<значення>' використовуя Object.keys() та for...of
 
 // const user = {
-//     name: "John",
-//     age: 20,
-//     hobby: "tenis",
-//     premium: true,
-//   };
+//   name: "John",
+//   age: 20,
+//   hobby: "tenis",
+//   premium: true,
+// };
+
+// function script() {
+//   user.mood = "happy";
+//   user.hobby = "skydiving";
+//   user.premium = false;
+//   for (const element of Object.keys(user)) {
+//     console.log(`${element}:${user[element]}`);
+//   }
+// }
+// script();
 
 // -------------------------------------------------------------------------------------------------------------------------------
 
@@ -141,10 +177,19 @@
 // Якщо об'єкт salaries пустий, то результат має бути 0
 
 // const salaries = {
-//     Mango: 100,
-//     Poly: 160,
-//     Ajax: 1470,
-//   };
+//   Mango: 100,
+//   Poly: 160,
+//   Ajax: 1470,
+// };
+
+// function sumSalaries(salaries) {
+//   let sum = 0;
+//   for (const salary of Object.values(salaries)) {
+//     sum += salary;
+//   }
+//   return sum;
+// }
+// console.log(sumSalaries(salaries));
 
 // -------------------------------------------------------------------------------------------------------------------------------
 
@@ -158,6 +203,40 @@
 // Якщо вказані властивості в обʼєкті відсутні (тобто метод exist повертає false),
 // методи sum і mult мають повертати рядок 'No such propeties'
 
+// const calculator = {
+//   read(a, b) {
+//     this.firstValue = a;
+//     this.secondValue = b;
+//   },
+
+//   exist() {
+//     return (
+//       this.hasOwnProperty("firstValue") && this.hasOwnProperty("secondValue")
+//     );
+//   },
+
+//   sum() {
+//     return this.hasOwnProperty("firstValue") &&
+//       this.hasOwnProperty("secondValue")
+//       ? this.firstValue + this.secondValue
+//       : "No such propeties";
+//   },
+
+//   mult() {
+//     return this.hasOwnProperty("firstValue") &&
+//       this.hasOwnProperty("secondValue")
+//       ? this.firstValue * this.secondValue
+//       : "No such propeties";
+//   },
+// };
+
+// calculator.read(20, 50);
+
+// console.log(calculator.sum());
+// console.log(calculator.mult());
+
+// console.log(calculator.exist());
+
 // -------------------------------------------------------------------------------------------------------------------------------
 
 // 10
@@ -170,10 +249,18 @@
 // назвою фрукта, це також треба урахувати.
 
 // const fruits = [
-//     { name: "Яблуко", price: 45, quantity: 7 },
-//     { name: "Апельсин", price: 60, quantity: 4 },
-//     { name: "Банан", price: 125, quantity: 8 },
-//     { name: "Груша", price: 350, quantity: 2 },
-//     { name: "Виноград", price: 440, quantity: 3 },
-//     { name: "Банан", price: 125, quantity: 3 },
-//   ];
+//   { name: "Яблуко", price: 45, quantity: 7 },
+//   { name: "Апельсин", price: 60, quantity: 4 },
+//   { name: "Банан", price: 125, quantity: 8 },
+//   { name: "Груша", price: 350, quantity: 2 },
+//   { name: "Виноград", price: 440, quantity: 3 },
+//   { name: "Банан", price: 125, quantity: 3 },
+// ];
+
+// const calcTotalPrice = (arrey, itemName) => {
+//   return arrey
+//     .filter((item) => item.name.toLowerCase() === itemName.toLowerCase())
+//     .reduce((acc, item) => acc + item.price * item.quantity, 0);
+// };
+
+// console.table(calcTotalPrice(fruits, "апельсин"));
