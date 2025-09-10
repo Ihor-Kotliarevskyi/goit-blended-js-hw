@@ -158,15 +158,12 @@
 //   premium: true,
 // };
 
-// function script() {
-//   user.mood = "happy";
-//   user.hobby = "skydiving";
-//   user.premium = false;
-//   for (const element of Object.keys(user)) {
-//     console.log(`${element}:${user[element]}`);
-//   }
+// user.mood = "happy";
+// user.hobby = "skydiving";
+// user.premium = false;
+// for (const element of Object.keys(user)) {
+//   console.log(`${element}:${user[element]}`);
 // }
-// script();
 
 // -------------------------------------------------------------------------------------------------------------------------------
 
@@ -184,8 +181,11 @@
 
 // function sumSalaries(salaries) {
 //   let sum = 0;
-//   for (const salary of Object.values(salaries)) {
-//     sum += salary;
+//   //   for (const salary of Object.values(salaries)) {
+//   //     sum += salary;
+//   //     }
+//   for (const salary in salaries) {
+//     sum += salaries[salary];
 //   }
 //   return sum;
 // }
@@ -216,15 +216,13 @@
 //   },
 
 //   sum() {
-//     return this.hasOwnProperty("firstValue") &&
-//       this.hasOwnProperty("secondValue")
+//     return this.exist
 //       ? this.firstValue + this.secondValue
 //       : "No such propeties";
 //   },
 
 //   mult() {
-//     return this.hasOwnProperty("firstValue") &&
-//       this.hasOwnProperty("secondValue")
+//     return this.exist
 //       ? this.firstValue * this.secondValue
 //       : "No such propeties";
 //   },
