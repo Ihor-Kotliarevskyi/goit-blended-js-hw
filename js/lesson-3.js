@@ -165,17 +165,61 @@
 // - метод multiply -Множить поточне значення на value. Повертає this.
 // Об'єкт класу може проводити послідовні операції у вигляді ланцюжка
 // Приклад використання:
+
+// class Calculator {
+//   constructor(value) {
+//     this.startValue = value;
+//   }
+
+//   number(value) {
+//     this.startValue = value;
+//     return this;
+//   }
+
+//   add(value) {
+//     this.startValue += value;
+//     return this;
+//   }
+
+//   subtract(value) {
+//     this.startValue -= value;
+//     return this;
+//   }
+
+//   multiply(value) {
+//     this.startValue *= value;
+//     return this;
+//   }
+
+//   divide(value) {
+//     if (value !== 0) {
+//       this.startValue /= value;
+//       return this;
+//     }
+//     console.log(`Value = 0, divide imposible!`);
+//     return this;
+//   }
+
+//   getResult() {
+//     return this.startValue;
+//   }
+// }
+
 // const calc = new Calculator();
 
-// const result = calc
-//   .number(10)   // Встановлюємо початкове значення 10
-//   .add(5)       // Додаємо 5 (10 + 5 = 15)
-//   .subtract(3)  // Віднімаємо 3 (15 - 3 = 12)
-//   .multiply(4)  // Множимо на 4 (12 * 4 = 48)
-//   .divide(2)    // Ділимо на 2 (48 / 2 = 24)
-//   .getResult(); // Отримуємо результат: 24
+// console.log(calc.startValue);
+// // const result = calc.number(5).subtract(1);
+// // console.log(calc);
 
-//   console.log(result); // 24
+// const result = calc
+//   .number(100) // Встановлюємо початкове значення 10
+//   .add(85) // Додаємо 5 (10 + 5 = 15)
+//   .subtract(37) // Віднімаємо 3 (15 - 3 = 12)
+//   .multiply(44) // Множимо на 4 (12 * 4 = 48)
+//   .divide(10) // Ділимо на 2 (48 / 2 = 24)
+//   .getResult(); // Отримуємо результат: 24
+
+// console.log(result); // 24
 
 // -------------------------------------------------------------------------------------------------------------------------------
 
@@ -183,6 +227,47 @@
 // Напиши клас Client який створює об'єкт з властивостями login email.
 // Оголоси приватні властивості #login #email, доступ до яких зроби
 // через геттер та сеттер login email
+
+// class Client {
+//   #login;
+//   #email;
+
+//   constructor(parameters) {
+//     this.#login = parameters.login;
+//     this.#email = parameters.email;
+//   }
+
+//   get login() {
+//     return this.#login;
+//   }
+
+//   get email() {
+//     return this.#email;
+//   }
+
+//   set login(newLogin) {
+//     this.#login = newLogin;
+//   }
+
+//   set email(newEmail) {
+//     this.#email = newEmail;
+//   }
+// }
+
+// const mango = new Client({
+//   login: "Mango",
+//   email: "mango@mail.com",
+// });
+
+// console.log(mango); // { login: "Mango", email: "mango@mail.com" }
+// console.log(mango.login);
+// mango.login = "Super Mango";
+// console.log(mango.login);
+
+// console.log(mango.email);
+// mango.email = "super_mango@mail.com";
+// console.log(mango.email);
+// console.log(mango); // { login: "Super Mango", email: "super_mango@mail.com" }
 
 // -------------------------------------------------------------------------------------------------------------------------------
 
