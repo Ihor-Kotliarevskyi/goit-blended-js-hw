@@ -288,3 +288,63 @@
 //  - salary - зарплата співробітника;
 //  - department - відділ, в якому працює співробітник.
 // Крім того, клас `Employee` має мати метод `getEmployeeDetails()`, який повертає об'єкт з зарплатою співробітника та відділом, в якому він працює.
+
+// class Person {
+//   constructor(parameters) {
+//     this.name = parameters.name;
+//     this.age = parameters.age;
+//     this.gender = parameters.gender;
+//     this.email = parameters.email;
+//   }
+//   getDetails() {
+//     return this;
+//   }
+// }
+
+// class Employee extends Person {
+//   constructor(parameters) {
+//     super(parameters);
+//     this.salary = parameters.salary;
+//     this.department = parameters.department;
+//   }
+
+//   getEmployeeDetails() {
+//     return { salary: this.salary, department: this.department };
+//   }
+// }
+
+// // Перевірка класу Person
+// const person1 = new Person({
+//   name: "Anna",
+//   age: 25,
+//   gender: "female",
+//   email: "anna@example.com",
+// });
+// console.log(person1.getDetails());
+// // Очікувано: { name: "Anna", age: 25, gender: "female", email: "anna@example.com" }
+
+// // Перевірка класу Employee
+// const employee1 = new Employee({
+//   name: "Ivan",
+//   age: 30,
+//   gender: "male",
+//   email: "ivan@example.com",
+//   salary: 2000,
+//   department: "IT",
+// });
+// console.log(employee1.getDetails());
+// // Очікувано: { name: "Ivan", age: 30, gender: "male", email: "ivan@example.com", salary: 2000, department: "IT" }
+// console.log(employee1.getEmployeeDetails());
+// // Очікувано: { salary: 2000, department: "IT" }
+
+// // Ще один співробітник
+// const employee2 = new Employee({
+//   name: "Olga",
+//   age: 28,
+//   gender: "female",
+//   email: "olga@example.com",
+//   salary: 2500,
+//   department: "HR",
+// });
+// console.log(employee2.getDetails());
+// console.log(employee2.getEmployeeDetails());
