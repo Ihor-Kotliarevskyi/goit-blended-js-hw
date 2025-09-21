@@ -440,40 +440,21 @@
 // }, 0);
 // console.log(result);
 
-// *********Task 3*********
-// Напиши клас Notes, який керує колекцієї заміток у властивості items
-// Замітка - це об"єкт із властивостями text та priority
-// Додай класу статичну властивість PRIORITY,
-//     в якому буде зберігатися об"єкт з пріоритетами
-//     Додай методи addNote(note), removeNote(text), updatePriority(text, newPriority)
+// const randomNumbers = [
+//   Math.floor(Math.random() * 1000),
+//   Math.floor(Math.random() * 100),
+//   Math.floor(Math.random() * 10),
+// ];
 
-class Notes {
-  static PRIORITY = {
-    LOW: low,
-    HI: hi,
-  };
-  constructor(parameters) {
-    this.text = parameters.text;
-    this.priority = parameters.priority || Notes.PRIORITY.LOW;
-  }
-  addNote(note) {
-    this.text;
-  }
+// const result = randomNumbers.reduce((max, num) => {
+//   if (max < num) {
+//     return (max = num);
+//   }
+//   return max;
+// }, 0);
+// console.log(result);
+// console.log(randomNumbers);
 
-  removeNote(text) {}
-
-  updatePriority(text, newPriority) {}
-}
-
-// const note1 = new Notes()
-
-// note1.addNote({ text: 'Note1', priority: Notes.PRIORITY.LOW })
-// note1.addNote({ text: 'Note2', priority: Notes.PRIORITY.LOW })
-// note1.addNote({ text: 'Note3', priority: Notes.PRIORITY.LOW })
-// note1.removeNote('Note1')
-// note1.updatePriority('Note2', Notes.PRIORITY.HIGHT)
-// console.log(note1.items)
-//
 // *********Task 2*********
 // Напиши клас Notes, який керує колекцієї заміток у властивості items
 // Замітка - це об"єкт із властивостями text та priority
@@ -481,11 +462,38 @@ class Notes {
 //     в якому буде зберігатися об"єкт з пріоритетами
 //     Додай методи addNote(note), removeNote(text), updatePriority(text, newPriority)
 
-// const note1 = new Notes()
+// class Notes {
+//   static PRIORITY = {
+//     LOW: "low",
+//     NORMAL: "normal",
+//     HIGHT: "high",
+//   };
 
-// note1.addNote({ text: 'Note1', priority: Notes.PRIORITY.LOW })
-// note1.addNote({ text: 'Note2', priority: Notes.PRIORITY.LOW })
-// note1.addNote({ text: 'Note3', priority: Notes.PRIORITY.LOW })
-// note1.removeNote('Note1')
-// note1.updatePriority('Note2', Notes.PRIORITY.HIGHT)
-// console.log(note1.items)
+//   constructor() {
+//     this.items = [];
+//   }
+
+//   addNote(note) {
+//     this.items.push(note);
+//   }
+
+//   removeNote(text) {
+//     this.items = this.items.filter((note) => note.text !== text);
+//   }
+
+//   updatePriority(text, newPriority) {
+//     const note = this.items.find((note) => note.text === text);
+//     if (note) {
+//       note.priority = newPriority;
+//     }
+//   }
+// }
+
+// const notes = new Notes();
+
+// notes.addNote({ text: "Note1", priority: Notes.PRIORITY.NORMAL });
+// notes.addNote({ text: "Note2", priority: Notes.PRIORITY.LOW });
+// notes.addNote({ text: "Note3", priority: Notes.PRIORITY.LOW });
+// // notes.removeNote("Note1");
+// notes.updatePriority("Note2", Notes.PRIORITY.HIGHT);
+// console.table(notes.items);
