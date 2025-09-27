@@ -71,6 +71,10 @@ ul {
   background-color: #ffed3b;
 }
 
+h3.active {
+  color: red;
+}
+
 /* form styles */
 .contact-form {
   display: flex;
