@@ -246,8 +246,21 @@
 //TODO:==============================================
 /*
 Завдання 1
-Натискання на кнопку "SHOW ME" має виводити значення з поля введення e консоль  (дивіться на елементи в html-розмітці)
+Натискання на кнопку "SHOW ME" має виводити значення з поля введення в консоль  (дивіться на елементи в html-розмітці)
 */
+const btn = document.querySelector("#alertButton");
+const input = document.querySelector("#alertInput");
+
+btn.addEventListener("click", handlerClick);
+input.addEventListener("input", handlerInput);
+let inputValue = "";
+function handlerInput(event) {
+  inputValue = event.currentTarget.value.trim();
+}
+function handlerClick() {
+  console.log(inputValue);
+  input.value = "";
+}
 /*
 Завдання 2
 Після натискання кнопки "SWAP ME" здійснюється обмін вмістом між двома інпутами.
