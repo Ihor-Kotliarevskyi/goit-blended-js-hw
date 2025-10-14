@@ -248,24 +248,53 @@
 Завдання 1
 Натискання на кнопку "SHOW ME" має виводити значення з поля введення в консоль  (дивіться на елементи в html-розмітці)
 */
-const btn = document.querySelector("#alertButton");
-const input = document.querySelector("#alertInput");
+// const btn = document.querySelector("#alertButton");
+// const input = document.querySelector("#alertInput");
 
-btn.addEventListener("click", handlerClick);
-input.addEventListener("input", handlerInput);
-let inputValue = "";
-function handlerInput(event) {
-  inputValue = event.currentTarget.value.trim();
-}
-function handlerClick() {
-  console.log(inputValue);
-  input.value = "";
-}
+// btn.addEventListener("click", handlerClick);
+// input.addEventListener("input", handlerInput);
+// let inputValue = "";
+// function handlerInput(event) {
+//   inputValue = event.currentTarget.value.trim();
+// }
+// function handlerClick() {
+//   console.log(inputValue);
+//   input.value = "";
+// }
 /*
 Завдання 2
 Після натискання кнопки "SWAP ME" здійснюється обмін вмістом між двома інпутами.
 Ви можете натиснути на неї кілька разів або вручну змінити вміст інпутів.
 */
+
+// const leftInputData = "";
+// const rightInputData = "";
+
+// const btn = document.querySelector("#swapButton");
+// const leftInput = document.querySelector("#leftSwapInput");
+// const rightInput = document.querySelector("#rightSwapInput");
+
+// leftInput.addEventListener("input", hendlerLeft);
+// rightInput.addEventListener("input", hendlerRight);
+
+// function hendlerLeft(event) {
+//   if (leftInput.value) {
+//     leftInputData = leftInput.value;
+//   } else {
+//     leftInputData = event.target.value;
+//   }
+// }
+
+// function hendlerRight(event) {
+//   if (rightInput.value) {
+//     rightInputData = rightInput.value;
+//   } else {
+//     rightInputData = event.target.value;
+//   }
+// }
+// console.log(leftInputData);
+// console.log(rightInputData);
+
 //* TODO:==============================================
 /*
 Завдання 3
@@ -319,3 +348,29 @@ https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/pageY
 Завдання 10
 Наведено список людей. Зроби можливість сортування списку на ім'я та на прізвище.
 */
+
+// Проміси
+// const isSuccess = true;
+
+// // Create promise
+// const promise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     if (isSuccess) {
+//       resolve("Success! Value passed to resolve function");
+//     } else {
+//       reject("Error! Error passed to reject function");
+//     }
+//   }, 2000);
+// });
+
+// // Registering promise callbacks
+// promise.then(
+//   (value) => {
+//     console.log(value); // "Success! Value passed to resolve function"
+//     console.log(promise); // "Success! Value passed to resolve function"
+//   },
+//   (error) => {
+//     console.log(error); // "Error! Error passed to reject function"
+//     console.log(promise); // "Error! Error passed to reject function"
+//   }
+// );
