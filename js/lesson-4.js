@@ -290,11 +290,15 @@
 // input.addEventListener("input", handlerInput);
 // let inputValue = "";
 // function handlerInput(event) {
-//   inputValue = event.currentTarget.value.trim();
+//   inputValue = input.value.trim();
 // }
 // function handlerClick() {
-//   console.log(inputValue);
-//   input.value = "";
+//   if (!input.value.trim()) {
+//     alert("Ooops!");
+//   } else {
+//     console.log(inputValue);
+//     input.value = "";
+//   }
 // }
 /*
 Завдання 2
@@ -302,30 +306,34 @@
 Ви можете натиснути на неї кілька разів або вручну змінити вміст інпутів.
 */
 
-// const leftInputData = "";
-// const rightInputData = "";
-
 // const btn = document.querySelector("#swapButton");
 // const leftInput = document.querySelector("#leftSwapInput");
 // const rightInput = document.querySelector("#rightSwapInput");
 
-// leftInput.addEventListener("input", hendlerLeft);
-// rightInput.addEventListener("input", hendlerRight);
+// btn.addEventListener("click", handlerClick);
+// leftInput.addEventListener("input", handlerLeft);
+// rightInput.addEventListener("input", handlerRight);
 
-// function hendlerLeft(event) {
-//   if (leftInput.value) {
-//     leftInputData = leftInput.value;
-//   } else {
-//     leftInputData = event.target.value;
+// let leftInputData = leftInput.value.trim();
+// let rightInputData = rightInput.value.trim();
+
+// function handlerClick() {
+//   if (leftInputData && rightInputData) {
+//     leftInput.value = rightInputData;
+//     rightInput.value = leftInputData;
+//     leftInputData = leftInput.value.trim();
+//     rightInputData = rightInput.value.trim();
 //   }
 // }
 
-// function hendlerRight(event) {
-//   if (rightInput.value) {
-//     rightInputData = rightInput.value;
-//   } else {
-//     rightInputData = event.target.value;
-//   }
+// function handlerLeft(event) {
+//   leftInputData = event.target.value.trim();
+//   console.log(leftInputData);
+// }
+
+// function handlerRight(event) {
+//   rightInputData = event.target.value.trim();
+//   console.log(rightInputData);
 // }
 // console.log(leftInputData);
 // console.log(rightInputData);
@@ -337,6 +345,28 @@
 "Розкрити", при повторному натисканні текст знову стає доступним
 і кнопка набуває початкового вигляду.
 */
+
+// const passwordInput = document.querySelector("#passwordInput");
+// const toggleButton = document.querySelector("#passwordButton");
+
+// toggleButton.addEventListener("click", toggleClick);
+
+// function toggleClick() {
+//   if (!passwordInput.value.trim()) {
+//     return;
+//   }
+//   if (
+//     passwordInput.type === "text" &&
+//     toggleButton.textContent === "Приховати"
+//   ) {
+//     passwordInput.type = "password";
+//     toggleButton.textContent = "Показати";
+//   } else {
+//     passwordInput.type = "text";
+//     toggleButton.textContent = "Приховати";
+//   }
+// }
+
 //TODO:==============================================
 /*
 Завдання 4
