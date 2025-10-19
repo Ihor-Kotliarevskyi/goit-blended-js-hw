@@ -210,7 +210,15 @@
     <!-- ЗАДАЧА + -->
 
     <p class="taskTitle">ЗАДАЧА +</p>
-    <button type="button" class="fetch-btn">Fetch users</button>
+    <button type="button" class="fetch-btn" data-endpoint="users">
+      Fetch users
+    </button>
+    <button type="button" class="fetch-btn" data-endpoint="todos">
+      Fetch todos
+    </button>
+    <button type="button" class="fetch-btn" data-endpoint="comments">
+      Fetch comments
+    </button>
     <ul class="response-user-list"></ul>
 
     <script type="module" src="/js/lesson-1.js"></script>

@@ -23,61 +23,49 @@
 // -----------Завдання 1------------
 
 // 1 - отримай body елемент і виведи його в консоль;
-// 2 - отримай елемент id="title" і виведи його в консоль;
-// 3 - отримай елемент class="list" і виведи його в консоль;
-// 4 - отримай всі елементи з атрибутом data-topic і виведи їх в консоль;
-// 5 - отримай перший елемент з списку всіх елементів з атрибутом data-topic і виведи його в консоль;
-// 6 - отримай останній елемент з списку всіх елементів з атрибутом data-topic і виведи його в консоль;
-// 7 - який елемент є сусідом для h1? Знайти і виведи його в консоль;
-// 8 - по тегу h3 знайти всі заголовки та виведи їх у консоль;
-// 9 - для кожного елмента h3 додай class="active", який змінить колір заголовка на червоний колір
-// 10 - знайти елемент li який має атрибут data-topic з значенням "navigation" і виведи його в консоль;
-// 11 - додай для знайденого елемента data-topic="navigation" атрибут style і зроби його backgroundColor жовтим
-// 12 - у елемента data-topic="navigation" знайди елемент р і зміни його текст на "Я змінив тут текст!".
-// 13 - створи const currentTopic = "manipulation"; після цього знайди елемент у якогоо атрибут data-topic має значення, яке зберігається у змінній currentTopic і виведи його в консоль;
-// 14 - додай до знайденого елемента атрибут style і зроби його backgroundColor блакитним;
-// 15 - знайти в документі заголовок, який має class="completed" і виведи його в консоль;
-// 16 - видали елемент li в якому знаходиться заголовок, який має class="completed"
-// 17 - після заголовка h1 (перед списком) додай новий елемент p і задай йому наступний текст: "Об'єктна модель документа (Document Object Model)"
-// 18 - додай новий елемент списку у кінець списка, його заголовок це - "Властивість innerHTML" а опис (р) - "Ще один спосіб створити DOM-елементи і помістити їх в дерево - це використовувати рядки з тегами і дозволити браузеру зробити всю важку роботу". тобто, потрібно створити елемент LI потім наповнити H3 та P і готову LI закинути у кінець списку
-// 19 - зроби це саме, але використовуй шаблонні рядки та метод insertAdjacentHTML()
-// 20 - очисти список
-
-//1
 // const bodyElement = document.querySelector("body");
 // console.log("Element Body:  ", bodyElement);
-// //2
+
+// 2 - отримай елемент id="title" і виведи його в консоль;
 // const titleElement = document.querySelector("#title");
 // console.log("Element with ID 'title':   ", titleElement);
-// //3
+
+// 3 - отримай елемент class="list" і виведи його в консоль;
 // const listElement = document.querySelector(".list");
 // console.log("Element with class 'list': ", listElement);
-// //4
+
+// 4 - отримай всі елементи з атрибутом data-topic і виведи їх в консоль;
 // const topicElement = document.querySelectorAll("[data-topic]");
 // console.log("All elements with data atribute 'data-topic':  ", topicElement);
-// //5
+
+// 5 - отримай перший елемент з списку всіх елементів з атрибутом data-topic і виведи його в консоль;
 // const firstTopicElement = topicElement[0];
 // console.log(
 //   "First element with data atribute 'data-topic': ",
 //   firstTopicElement
 // );
-// //6
+
+// 6 - отримай останній елемент з списку всіх елементів з атрибутом data-topic і виведи його в консоль;
 // const lastTopicElement = topicElement[topicElement.length - 1];
 // console.log(
 //   "Last element with data atribute 'data-topic':  ",
 //   lastTopicElement
 // );
-// //7
+
+// 7 - який елемент є сусідом для h1? Знайти і виведи його в консоль;
 // const h1Element = document.querySelector("h1");
 // console.log("Sibling element for tag h1:    ", h1Element.nextElementSibling);
-// //8
+
+// 8 - по тегу h3 знайти всі заголовки та виведи їх у консоль;
 // const h3Element = document.querySelectorAll("h3");
 // const textOftitles = h3Element.forEach((elem) => {
 //   console.log("Text content of tag h3:  ", elem.textContent);
 // });
-// //9
+
+// 9 - для кожного елмента h3 додай class="active", який змінить колір заголовка на червоний колір
 // h3Element.forEach((elem) => elem.classList.add("active"));
-// //10
+
+// 10 - знайти елемент li який має атрибут data-topic з значенням "navigation" і виведи його в консоль;
 // const allLiElement = document.querySelectorAll("li");
 
 // allLiElement.forEach((elem) => {
@@ -85,17 +73,20 @@
 //     return;
 //   } else {
 //     console.log("Element with data atribute 'navigation':   ", elem);
-//     //11
-//     elem.style.backgroundColor = "yellow";
-//     //12
-//     for (const child of elem.children) {
-//       if (child.nodeName === "P") {
-//         child.textContent = "Я змінив тут текст!";
-//       }
-//     }
+
+// 11 - додай для знайденого елемента data-topic="navigation" атрибут style і зроби його backgroundColor жовтим
+// elem.style.backgroundColor = "yellow";
+
+// 12 - у елемента data-topic="navigation" знайди елемент р і зміни його текст на "Я змінив тут текст!".
+// for (const child of elem.children) {
+//   if (child.nodeName === "P") {
+//     child.textContent = "Я змінив тут текст!";
 //   }
+//  }
+// }
 // });
-// //13
+
+// 13 - створи const currentTopic = "manipulation"; після цього знайди елемент у якогоо атрибут data-topic має значення, яке зберігається у змінній currentTopic і виведи його в консоль;
 // allLiElement.forEach((elem) => {
 //   const currentTopic = "manipulation";
 
@@ -103,20 +94,26 @@
 //     return;
 //   } else {
 //     console.log("Element with data atribute from 'currentTopic':   ", elem);
-//     //14
-//     elem.style.backgroundColor = "cyan";
+
+// 14 - додай до знайденого елемента атрибут style і зроби його backgroundColor блакитним;
+// elem.style.backgroundColor = "cyan";
 //   }
 // });
-// //15
+
+// 15 - знайти в документі заголовок, який має class="completed" і виведи його в консоль;
 // const completedElement = document.querySelector(".completed");
 // console.log(completedElement);
-// //16
+
+// 16 - видали елемент li в якому знаходиться заголовок, який має class="completed"
 // completedElement.parentElement.remove();
-// //17
+
+// 17 - після заголовка h1 (перед списком) додай новий елемент p і задай йому наступний текст: "Об'єктна модель документа (Document Object Model)"
 // const text = document.createElement("p");
 // text.textContent = "Об'єктна модель документа (Document Object Model)";
 // listElement.insertAdjacentHTML("beforebegin", text.innerHTML);
-// //18
+
+// 18 - додай новий елемент списку у кінець списка, його заголовок це - "Властивість innerHTML" а опис (р) - "Ще один спосіб створити DOM-елементи і помістити їх в дерево - це використовувати рядки з тегами і дозволити браузеру зробити всю важку роботу". тобто, потрібно створити елемент LI потім наповнити H3 та P і готову LI закинути у кінець списку
+//18
 // const item = document.createElement("li");
 // const itemTitle = document.createElement("h3");
 // itemTitle.textContent = "Властивість innerHTML";
@@ -127,7 +124,8 @@
 // item.append(itemText);
 
 // listElement.insertAdjacentHTML("beforeend", item.innerHTML);
-// //19
+
+// 19 - зроби це саме, але використовуй шаблонні рядки та метод insertAdjacentHTML()
 // const markup = `<li>
 // <h3>Властивість innerHTML</h3>
 // <p>Ще один спосіб створити DOM-елементи і помістити їх в дерево - це використовувати рядки з тегами і дозволити браузеру зробити всю важку роботу</p>
@@ -135,6 +133,7 @@
 
 // listElement.insertAdjacentHTML("beforeend", markup);
 
+// 20 - очисти список
 // listElement.innerHTML = "";
 
 // -------------------------------------------------------------------------------------------------------------------------------------------
@@ -201,6 +200,16 @@
 // якщо ж поле пусте, то зроби `outline` => `'3px solid red'`,
 // якщо при фокусі поле непусте, то `outline` => `'3px solid lime'`
 
+// const input = document.querySelector(".contact-form-input");
+// input.addEventListener("blur", handlerBlur);
+// function handlerBlur() {
+//   if (input.value.trim() === "") {
+//     input.style.outline = "3px solid red";
+//   } else {
+//     input.style.outline = "3px solid lightblue";
+//   }
+// }
+
 // 4 - При події `submit`. Відміни поведінку браузера по змовчуванню.
 // Дістань данні з інпуту і чек боксу, зроби перевірку,
 // що інпут не порожній, також, що нажатий чек бокс у положення true,
@@ -213,13 +222,39 @@
 // При відправці форми, очисти інпут, верни чек бокс у положення
 // false, верни дефолтне значення "Anonymous" у span.
 
-// const form = document.querySelector(".contact-form");
+// const form = document.querySelector(".js-contact-form");
+// const span = document.querySelector(".js-username-output");
+// const input = document.querySelector(".contact-form-input");
 // form.addEventListener("submit", handlerSubmit);
 
 // function handlerSubmit(event) {
 //   event.preventDefault();
-//   console.log(event.target.elements.userName.value);
-//   console.log(event.currentTarget);
+
+//   const name = event.target.elements.userName.value.trim();
+//   const accept = event.target.elements.accept.checked;
+
+//   if (!name || !accept) {
+//     alert("Ooops!");
+//   } else {
+//     const user = {};
+//     user.userName = name;
+//     console.log(user);
+
+//     form.reset();
+//     span.textContent = "Anonymous";
+//   }
+// }
+
+// input.addEventListener("input", handlerInput);
+// function handlerInput() {
+//   span.textContent = input.value.trim();
+// }
+
+// input.addEventListener("blur", handlerBlur);
+// function handlerBlur() {
+//   if (!input.value) {
+//     span.textContent = "Anonymous";
+//   }
 // }
 
 // -------------------------------------------------------------------------------------------------------------------------------------------

@@ -1,8 +1,10 @@
 const fetchUsersBtn = document.querySelector(".fetch-btn");
 const userList = document.querySelector(".response-user-list");
 
+const baseUrl = "https://jsonplaceholder.typicode.com/users";
+
 fetchUsersBtn.addEventListener("click", () => {
-  fetch("https://jsonplaceholder.typicode.com/users")
+  fetch(baseUrl)
     .then((response) => {
       if (!response.ok) {
         throw new Error(response.status);
